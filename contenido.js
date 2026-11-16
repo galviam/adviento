@@ -13,7 +13,7 @@ const AJUSTES = {
 
   // Mensaje de bienvenida (el \n crea un salto de línea)
   bienvenida:
-    "Veinticuatro sobres, veinticuatro formas de decirte lo mismo.\nUno cada día, hasta Nochebuena.",
+    "Veinticuatro sobres, veinticuatro formas de decirte te amo.\nUno cada día, hasta Nochebuena.",
 
   // Firma que aparece en el pie de página. Pon "" para ocultarla.
   firma: "Con todo mi amor, Amparo",
