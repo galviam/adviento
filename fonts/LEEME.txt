@@ -1,0 +1,5 @@
+Copia aquí tus archivos de fuente:
+  NewIconScript.woff2
+  TTNorms-Regular.woff2
+  TTNorms-Bold.woff2
+(también valen .woff, .otf o .ttf con el mismo nombre)

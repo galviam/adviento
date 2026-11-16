@@ -21,7 +21,8 @@ Una web de calendario de adviento con 24 sobres (del 1 al 24 de diciembre). Es H
 ├── contenido.js     ← AQUÍ editas título, bienvenida y los 24 días
 ├── manifest.json    Datos de la PWA (nombre, colores, iconos)
 ├── sw.js            Service worker (modo sin conexión)
-├── img/             Tus imágenes de los días (hay una de ejemplo)
+├── img/             Tus fotos de los días (dia-01.svg … dia-24.svg son de prueba)
+├── fonts/           Tus tipografías (New Icon Script y TT Norms)
 └── icons/           Iconos de la app
 ```
 
@@ -144,6 +145,12 @@ Consejos:
 - **Nieve**: cada persona puede apagarla en **Ajustes**. Para dejarla apagada por defecto, `nieve: false` en `contenido.js`. Se desactiva sola si el dispositivo pide «reducir movimiento».
 - **Iconos de la app**: sustituye los archivos de `icons/` manteniendo nombres y tamaños (192×192, 512×512, el «maskable» de 512×512 y el de iOS de 180×180).
 - **Nombre de la app al instalarla**: `name` y `short_name` en `manifest.json`.
+
+## Fotos y tipografías propias
+
+**Fotos.** Cada día ya apunta a una imagen de prueba (`img/dia-01.svg` … `img/dia-24.svg`). Para poner la tuya: guarda la foto en `img/` (p. ej. `dia-05.jpg`, mejor de menos de 500 KB) y en `contenido.js` cambia `imagen: "img/dia-05.svg"` por `imagen: "img/dia-05.jpg"`. Si un día no lleva foto, borra sus líneas `imagen` y `altImagen`. Cualquier tipo de sobre puede llevar foto.
+
+**Tipografías.** Los títulos y números usan **New Icon Script** y el resto **TT Norms**. Son fuentes de pago: copia tus archivos web en `fonts/` con estos nombres (valen `.woff2`, `.woff`, `.otf` o `.ttf`): `NewIconScript.woff2`, `TTNorms-Regular.woff2` y `TTNorms-Bold.woff2`. Comprueba que tu licencia permite usarlas en una web. Mientras falten, se usan fuentes de respaldo. Si la script se ve pequeña o grande, ajusta los `font-size` de `h1`, `.sobre-num`, `.carta h2` y `.cuenta-num` en `styles.css`.
 
 ---
 

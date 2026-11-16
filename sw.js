@@ -10,6 +10,7 @@ const NUCLEO = [
   './', 'index.html', 'styles.css', 'app.js', 'contenido.js', 'manifest.json',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png',
   'icons/apple-touch-icon.png',
+  'fonts/NewIconScript.woff2', 'fonts/TTNorms-Regular.woff2', 'fonts/TTNorms-Bold.woff2',   // si no existen, se ignoran
 ];
 
 // Lee contenido.js para guardar también las imágenes de los días (rutas locales)

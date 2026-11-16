@@ -1,6 +1,6 @@
 /* =====================================================================
    CONTENIDO.JS  ·  Aquí personalizas TODO el contenido del calendario.
-   No necesitas tocar ningún otro archivo para cambiar textos.
+   No necesitas tocar ningún otro archivo para cambiar textos ni fotos.
    ===================================================================== */
 
 /* ---------- 1. AJUSTES GENERALES ---------- */
@@ -13,10 +13,10 @@ const AJUSTES = {
 
   // Mensaje de bienvenida (el \n crea un salto de línea)
   bienvenida:
-    "Cada día, hasta Nochebuena, encontrarás un sobre con una sorpresa.\nÁbrelos con calma: uno al día. 🎄",
+    "Veinticuatro sobres, veinticuatro formas de decirte lo mismo.\nUno cada día, hasta Nochebuena. 🎄",
 
   // Firma que aparece en el pie de página. Pon "" para ocultarla.
-  firma: "Con cariño, [tu nombre]",
+  firma: "Con todo mi amor, [tu nombre]",
 
   // Tema de color: "oscuro" (noche navideña) o "papel" (fondo claro tipo papel).
   // Para cambiar colores a tu gusto, edita las variables al principio de styles.css
@@ -29,11 +29,10 @@ const AJUSTES = {
   mezclarSobres: false,
 
   // Año del calendario. null = el año actual del dispositivo.
-  // Ejemplo: 2026 -> antes de diciembre de 2026 hay cuenta atrás, y a partir de 2027 todo queda abierto.
   anio: null,
 
   // Si pones false, el "Modo prueba" desaparece del menú de Ajustes.
-  // Recomendado: déjalo en true mientras pruebas y ponlo en false antes de enviárselo a alguien.
+  // Recomendado: ponlo en false antes de enviárselo.
   modoPruebaDisponible: true,
 };
 
@@ -44,187 +43,233 @@ const AJUSTES = {
      titulo       (obligatorio) título corto
      tipo         (obligatorio) "mensaje" | "frase" | "reto" | "foto" | "enlace"
      texto        (obligatorio) el contenido; \n crea salto de línea
-     imagen       (opcional)    ruta a una imagen dentro de la carpeta img/, p. ej. "img/dia-12.jpg"
-     altImagen    (opcional)    descripción de la imagen (accesibilidad)
-     enlace       (opcional)    dirección web completa, p. ej. "https://..."
+     imagen       (opcional)    ruta de la foto, dentro de la carpeta img/
+     altImagen    (opcional)    descripción de la foto (para lectores de pantalla)
+     enlace       (opcional)    dirección web completa
      textoEnlace  (opcional)    texto del botón del enlace
 
-   El orden dentro de la lista no importa: cada sobre se asocia por el campo "dia".
+   CÓMO CAMBIAR UNA FOTO:
+     1. Guarda tu foto en la carpeta img/ (por ejemplo img/dia-05.jpg).
+     2. En el día correspondiente, cambia la línea  imagen: "img/dia-05.svg"
+        por                                          imagen: "img/dia-05.jpg"
+     Si un día no lleva foto, borra las líneas imagen y altImagen de ese día.
+     Cualquier tipo de sobre puede llevar foto (no hace falta usar tipo "foto").
 */
 const DIAS = [
   {
     dia: 1,
-    titulo: "Empieza la cuenta atrás",
+    titulo: "Empieza nuestra cuenta atrás",
     tipo: "mensaje",
     texto:
-      "Hoy se abre el primer sobre y con él empieza un mes de pequeñas ilusiones. Cada día habrá algo para ti: una frase, un plan, un reto, un «gracias».\n\nDisfruta del camino hasta Nochebuena.",
+      "Hoy se abre el primer sobre y con él empieza un mes entero de pequeñas sorpresas.\n\nVeinticuatro días para recordarte lo mucho que te quiero, aunque ya lo sepas. Porque hay cosas que nunca se dicen demasiadas veces.",
+    imagen: "img/dia-01.svg",
+    altImagen: "Foto del día 1",
   },
   {
     dia: 2,
-    titulo: "Pequeñas luces",
+    titulo: "Mi lugar favorito",
     tipo: "frase",
     texto:
-      "No hace falta una gran hoguera para dar calor: a veces basta con una vela encendida a tiempo.",
+      "Mi lugar favorito del mundo no está en ningún mapa: es cualquier sitio donde estés tú.",
+    imagen: "img/dia-02.svg",
+    altImagen: "Foto del día 2",
   },
   {
     dia: 3,
-    titulo: "Llama a alguien",
-    tipo: "reto",
+    titulo: "Contigo, despacio",
+    tipo: "frase",
     texto:
-      "Hoy escribe o llama a una persona con la que hace tiempo que no hablas. No necesitas un motivo: «Me he acordado de ti» ya es suficiente.",
+      "Contigo he aprendido que la felicidad casi nunca hace ruido: es una tarde tranquila, una mano que busca la mía y tu risa llenando la casa.",
+    imagen: "img/dia-03.svg",
+    altImagen: "Foto del día 3",
   },
   {
     dia: 4,
-    titulo: "Gracias por tus risas",
-    tipo: "mensaje",
+    titulo: "Lo que más quiero",
+    tipo: "frase",
     texto:
-      "Hoy quiero darte las gracias por todas las veces que has convertido un día cualquiera en un buen recuerdo. Tu risa es una de mis cosas favoritas.",
+      "Si me pidieran decir qué es lo que más quiero de ti, no sabría elegir: tu forma de mirar, de reír, de cuidar, de estar. Te quiero con todo lo que eres.",
+    imagen: "img/dia-04.svg",
+    altImagen: "Foto del día 4",
   },
   {
     dia: 5,
-    titulo: "Plan: chocolate y manta",
-    tipo: "reto",
+    titulo: "Mi casa",
+    tipo: "frase",
     texto:
-      "Plan de hoy: chocolate caliente, manta y una peli navideña. Elige la peli antes de que acabe el día y deja el móvil lejos mientras dure.",
+      "Tú eres mi casa. Da igual el sitio, la hora o el día que haya sido: cuando llego a ti, llego a casa.",
+    imagen: "img/dia-05.svg",
+    altImagen: "Foto del día 5",
   },
   {
     dia: 6,
-    titulo: "Lo que de verdad importa",
+    titulo: "Gracias por quedarte",
     tipo: "frase",
     texto:
-      "Los mejores regalos casi nunca caben en una caja: tiempo, atención y una buena conversación.",
+      "Gracias por quedarte, por entenderme incluso cuando no sé explicarme y por hacer más suave todo lo que pesa. Contigo, hasta lo difícil se vuelve ligero.",
+    imagen: "img/dia-06.svg",
+    altImagen: "Foto del día 6",
   },
   {
     dia: 7,
-    titulo: "Pon banda sonora",
-    tipo: "enlace",
+    titulo: "Cada mañana",
+    tipo: "frase",
     texto:
-      "Hoy toca música. Pulsa el botón, elige una lista de villancicos y deja que suene mientras haces lo que más te apetezca.",
-    enlace: "https://www.youtube.com/results?search_query=villancicos",
-    textoEnlace: "Buscar villancicos",
+      "Cada mañana te elegiría otra vez. Y mañana también. Y todas las mañanas que me queden.",
+    imagen: "img/dia-07.svg",
+    altImagen: "Foto del día 7",
   },
   {
     dia: 8,
-    titulo: "Tres cosas buenas",
-    tipo: "reto",
+    titulo: "Pequeños milagros",
+    tipo: "frase",
     texto:
-      "Antes de dormir, escribe tres cosas buenas que te hayan pasado hoy. Pueden ser enormes o diminutas: un café bien caliente también cuenta.",
+      "Me enamoro de ti en lo pequeño: en cómo me miras desde el otro lado de la mesa, en cómo me cuentas tu día, en cómo conviertes lo cotidiano en algo bonito.",
+    imagen: "img/dia-08.svg",
+    altImagen: "Foto del día 8",
   },
   {
     dia: 9,
-    titulo: "Gracias por estar",
-    tipo: "mensaje",
+    titulo: "Mi persona favorita",
+    tipo: "frase",
     texto:
-      "Gracias por estar, también en los días grises. Contigo hasta el invierno más largo se hace llevadero.",
+      "De todas las personas del mundo, eres a quien quiero contarle mi día, a quien quiero abrazar al llegar y a quien quiero tener cerca cuando todo se complica.",
+    imagen: "img/dia-09.svg",
+    altImagen: "Foto del día 9",
   },
   {
     dia: 10,
-    titulo: "Despacio",
+    titulo: "Mi norte",
     tipo: "frase",
     texto:
-      "Diciembre no va de llegar a todo, sino de disfrutar de lo que sí llegas a hacer.",
+      "Contigo no necesito mapa. Tú eres mi norte, mi calma y mis ganas de seguir caminando.",
+    imagen: "img/dia-10.svg",
+    altImagen: "Foto del día 10",
   },
   {
     dia: 11,
-    titulo: "Un detalle sin motivo",
-    tipo: "reto",
+    titulo: "Mi mejor versión",
+    tipo: "frase",
     texto:
-      "Haz hoy un pequeño detalle por alguien sin que se lo espere: una nota, un dulce, un mensaje bonito o una ayuda a tiempo.",
+      "Contigo me siento mi mejor versión: más valiente, más tranquilo, más yo. Me has enseñado que querer también es cuidar, esperar y reír juntos.",
+    imagen: "img/dia-11.svg",
+    altImagen: "Foto del día 11",
   },
   {
     dia: 12,
-    titulo: "Un recuerdo",
-    tipo: "foto",
+    titulo: "Hoy lo celebramos",
+    tipo: "mensaje",
     texto:
-      "Cada foto guarda un momento que no volverá. Aquí iría una imagen vuestra.\n\n(Ejemplo: sustituye esta ilustración por una foto tuya dentro de la carpeta img/ y cambia la ruta en contenido.js.)",
-    imagen: "img/ejemplo.svg",
-    altImagen: "Ilustración de ejemplo de un paisaje nevado",
+      "Hoy celebramos nuestro primer aniversario. El día exacto llega el 17, pero no quería esperar para brindar por ti, por nosotros y por todo lo bonito que hemos construido en este año.\n\nGracias por cada risa, por cada abrazo y por cada «quédate un ratito más». Esta noche, tú y yo. Te quiero.",
+    imagen: "img/dia-12.svg",
+    altImagen: "Foto del día 12, celebración",
   },
   {
     dia: 13,
-    titulo: "Plan: paseo de luces",
-    tipo: "reto",
+    titulo: "Tu risa",
+    tipo: "frase",
     texto:
-      "Sal a pasear al anochecer y busca las luces más bonitas de tu zona. Reto extra: encuentra la casa o el escaparate más decorado.",
+      "Mi sonido favorito es tu risa. Mi sitio favorito, a tu lado. Mi hora favorita, cualquiera en la que estés.",
+    imagen: "img/dia-13.svg",
+    altImagen: "Foto del día 13",
   },
   {
     dia: 14,
-    titulo: "Receta para hoy",
-    tipo: "enlace",
+    titulo: "Cualquier plan contigo",
+    tipo: "frase",
     texto:
-      "Si te apetece, hoy puedes cocinar algo dulce. Aquí tienes un buscador de recetas navideñas para inspirarte.",
-    enlace: "https://duckduckgo.com/?q=recetas+navide%C3%B1as",
-    textoEnlace: "Buscar recetas",
+      "Cualquier plan contigo, hasta el más sencillo, se convierte en el mejor del día. No necesito nada más que tu compañía.",
+    imagen: "img/dia-14.svg",
+    altImagen: "Foto del día 14",
   },
   {
     dia: 15,
-    titulo: "Gracias por tu paciencia",
-    tipo: "mensaje",
+    titulo: "Mi mejor casualidad",
+    tipo: "frase",
     texto:
-      "Gracias por tu paciencia con mis prisas, mis despistes y mis cuentas atrás. Prometo bajar el ritmo en cuanto huela a turrón.",
+      "Si pudiera volver atrás, volvería a encontrarte. Una y mil veces. Eres lo mejor que me ha pasado, y también lo mejor que he elegido.",
+    imagen: "img/dia-15.svg",
+    altImagen: "Foto del día 15",
   },
   {
     dia: 16,
-    titulo: "Hogar",
+    titulo: "Lo que no se ve",
     tipo: "frase",
-    texto: "Casa es el sitio donde apetece quedarse a escuchar un rato más.",
+    texto:
+      "Hay cosas que no se ven y valen más que cualquier regalo: la paz que me das, la seguridad con la que me quieres y cómo se me ordena el mundo cuando estás cerca.",
+    imagen: "img/dia-16.svg",
+    altImagen: "Foto del día 16",
   },
   {
     dia: 17,
-    titulo: "Una hora sin pantallas",
-    tipo: "reto",
+    titulo: "Un año contigo",
+    tipo: "mensaje",
     texto:
-      "Hoy, una hora sin pantallas. Lee, dibuja, cocina, camina o simplemente mira por la ventana. Aburrirse un poco también es una forma de descansar.",
+      "Hoy hace un año que empezó la mejor historia que conozco.\n\nGracias por cada día a mi lado, por tu paciencia, por tu ternura y por hacerme tan feliz. Si tuviera que volver a empezar, empezaría igual: contigo.\n\nFeliz primer aniversario, mi amor. Esto es solo el principio.",
+    imagen: "img/dia-17.svg",
+    altImagen: "Foto del día 17, aniversario",
   },
   {
     dia: 18,
-    titulo: "Una promesa pequeña",
-    tipo: "mensaje",
+    titulo: "Tu mano",
+    tipo: "frase",
     texto:
-      "Para el año que viene me gustaría que nos prometiéramos algo sencillo: más tardes sin prisa y más cenas largas.",
+      "Mi sitio favorito para dar la mano es la tuya. Cuando la sostengo, siento que todo va a salir bien.",
+    imagen: "img/dia-18.svg",
+    altImagen: "Foto del día 18",
   },
   {
     dia: 19,
-    titulo: "Plan: noche de juegos",
-    tipo: "reto",
+    titulo: "Lo que venga",
+    tipo: "frase",
     texto:
-      "Plan para esta noche: juegos de mesa, cartas o un puzle. Quien pierda prepara la siguiente ronda de chocolate.",
+      "No sé qué nos traerá el año que viene, pero sé con quién quiero descubrirlo.",
+    imagen: "img/dia-19.svg",
+    altImagen: "Foto del día 19",
   },
   {
     dia: 20,
-    titulo: "Otro recuerdo",
-    tipo: "foto",
+    titulo: "Tus abrazos",
+    tipo: "frase",
     texto:
-      "Otra imagen de ejemplo. Guarda tus fotos en la carpeta img/ (mejor ligeras, de menos de 500 KB) y escribe aquí su nombre.",
-    imagen: "img/ejemplo.svg",
-    altImagen: "Ilustración de ejemplo de un paisaje nevado",
+      "Tus abrazos son un refugio: llegan, me recogen y todo lo demás se queda fuera un ratito. Podría vivir ahí.",
+    imagen: "img/dia-20.svg",
+    altImagen: "Foto del día 20",
   },
   {
     dia: 21,
-    titulo: "La noche más larga",
+    titulo: "Mi luz favorita",
     tipo: "frase",
     texto:
-      "Por estas fechas llega la noche más larga del año y, justo después, la luz empieza a volver. Siempre hay un después.",
+      "Por estas fechas llega la noche más larga del año, y a tu lado hasta la noche más larga es un regalo. Eres mi luz favorita en invierno y en todas las estaciones.",
+    imagen: "img/dia-21.svg",
+    altImagen: "Foto del día 21",
   },
   {
     dia: 22,
-    titulo: "Escribe una carta",
-    tipo: "reto",
+    titulo: "Te quiero así",
+    tipo: "frase",
     texto:
-      "Escribe una carta corta a quien tú quieras (también vale a tu yo del año que viene). Cuéntale qué ha sido lo mejor de este año.",
+      "Te quiero en lo grande y en lo pequeño, en lo fácil y en lo difícil, en los días de fiesta y en los martes cualquiera.",
+    imagen: "img/dia-22.svg",
+    altImagen: "Foto del día 22",
   },
   {
     dia: 23,
-    titulo: "Gracias por este año",
-    tipo: "mensaje",
+    titulo: "Mi mejor regalo",
+    tipo: "frase",
     texto:
-      "Mañana es Nochebuena, así que hoy toca decir gracias: por los buenos ratos, por los malos que se llevaron mejor en compañía y por todo lo que aún está por venir.",
+      "Mañana es Nochebuena y mi mejor regalo ya lo tengo: tenerte. Lo demás es solo envoltorio.",
+    imagen: "img/dia-23.svg",
+    altImagen: "Foto del día 23",
   },
   {
     dia: 24,
-    titulo: "¡Feliz Nochebuena!",
+    titulo: "Feliz Nochebuena, mi vida",
     tipo: "mensaje",
     texto:
-      "Has llegado al último sobre. Ojalá esta noche esté llena de buena mesa, gente querida y calma.\n\nQue tengas una Navidad preciosa. 🎄✨",
+      "Has llegado al último sobre, pero no a lo último que tengo para decirte.\n\nGracias por este año, por tu amor y por cada momento a tu lado. Te quiero hoy, te querré mañana y todos los días que vengan.\n\nFeliz Navidad, mi amor. 🎄❤️",
+    imagen: "img/dia-24.svg",
+    altImagen: "Foto del día 24",
   },
 ];
