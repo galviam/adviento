@@ -499,7 +499,7 @@ dialog[open] { animation: entrar 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.1); }
 .carta-figura { margin: 0 0 1rem; }
 .carta-figura img {
   display: block;
-  width: 75%;
+  width: 50%;
   margin: 0 auto;
   max-height: 52vh;
   object-fit: contain;
