@@ -13,7 +13,7 @@
     sinContenido: 'Este día todavía no tiene contenido. Edita contenido.js para añadirlo.',
     estadoAntes: 'Los sobres se irán desbloqueando a partir del 1 de diciembre.',
     estadoDurante: (hoy, abiertos) => `Hoy es ${hoy} de diciembre · Has abierto ${abiertos} de 24`,
-    estadoDespues: (abiertos) => `¡Feliz Navidad! 🎄 Has abierto ${abiertos} de 24`,
+    estadoDespues: (abiertos) => `¡Feliz Navidad! Has abierto ${abiertos} de 24`,
     reiniciarTitulo: '¿Reiniciar el progreso?',
     reiniciarTexto: 'Todos los sobres volverán a aparecer sin abrir. Esta acción no se puede deshacer.',
     reiniciarSi: 'Sí, reiniciar',
