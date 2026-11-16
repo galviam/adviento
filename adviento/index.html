@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es" data-tema="oscuro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Calendario de Adviento</title>
+  <meta name="description" content="Calendario de adviento: un sobre con una sorpresa cada día hasta Nochebuena.">
+  <meta name="theme-color" content="#0d1a14">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Adviento">
+
+  <!-- Tipografías (Google Fonts). Para cambiarlas, edita también --fuente-titulo / --fuente-texto en styles.css -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Nieve decorativa (se genera desde app.js; se puede desactivar en Ajustes) -->
+  <div class="nieve" id="nieve" aria-hidden="true"></div>
+
+  <div class="banner-prueba" id="bannerPrueba" role="status" hidden>
+    🧪 Modo prueba: todos los sobres están desbloqueados
+  </div>
+
+  <header class="cabecera">
+    <div class="guirnalda" aria-hidden="true"></div>
+    <p class="para" id="para"></p>
+    <h1 id="titulo">Calendario de Adviento</h1>
+    <p class="bienvenida" id="bienvenida"></p>
+  </header>
+
+  <main class="principal" id="principal">
+    <!-- Cuenta atrás (solo antes del 1 de diciembre) -->
+    <section class="cuenta" id="cuenta" role="timer" aria-label="Tiempo que falta para el 1 de diciembre" hidden>
+      <p class="cuenta-titulo">Faltan para el 1 de diciembre</p>
+      <div class="cuenta-cajas">
+        <div class="cuenta-caja"><span class="cuenta-num" id="cdDias">0</span><span class="cuenta-et">días</span></div>
+        <div class="cuenta-caja"><span class="cuenta-num" id="cdHoras">00</span><span class="cuenta-et">horas</span></div>
+        <div class="cuenta-caja"><span class="cuenta-num" id="cdMin">00</span><span class="cuenta-et">min</span></div>
+        <div class="cuenta-caja"><span class="cuenta-num" id="cdSeg">00</span><span class="cuenta-et">seg</span></div>
+      </div>
+    </section>
+
+    <p class="estado" id="estado"></p>
+
+    <ol class="rejilla" id="rejilla" role="list" aria-label="Los 24 sobres del calendario"></ol>
+
+    <noscript><p class="estado">Este calendario necesita JavaScript para funcionar.</p></noscript>
+  </main>
+
+  <footer class="pie">
+    <p class="firma" id="firma"></p>
+    <button type="button" class="btn-pie" id="btnAjustes">⚙ Ajustes</button>
+  </footer>
+
+  <!-- Aviso breve (sobres bloqueados, etc.) -->
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+  <!-- MODAL: contenido del día -->
+  <dialog id="dlgDia" role="dialog" aria-modal="true" aria-labelledby="dlgDiaTitulo" aria-describedby="dlgDiaTexto">
+    <article class="carta">
+      <button type="button" class="cerrar" data-cerrar aria-label="Cerrar">✕</button>
+      <p class="carta-meta">
+        <span class="pildora" id="dlgDiaTipo"></span>
+        <span class="carta-dia" id="dlgDiaNum"></span>
+      </p>
+      <h2 id="dlgDiaTitulo"></h2>
+      <figure class="carta-figura" id="dlgDiaFigura" hidden>
+        <img id="dlgDiaImg" alt="" decoding="async">
+      </figure>
+      <p class="carta-texto" id="dlgDiaTexto"></p>
+      <div class="carta-acciones">
+        <a class="btn btn-oro" id="dlgDiaEnlace" target="_blank" rel="noopener noreferrer" hidden></a>
+        <button type="button" class="btn" data-cerrar>Cerrar</button>
+      </div>
+    </article>
+  </dialog>
+
+  <!-- MODAL: ajustes -->
+  <dialog id="dlgAjustes" role="dialog" aria-modal="true" aria-labelledby="ajTitulo">
+    <div class="carta">
+      <button type="button" class="cerrar" data-cerrar aria-label="Cerrar ajustes">✕</button>
+      <h2 id="ajTitulo">Ajustes</h2>
+      <ul class="ajustes">
+        <li>
+          <label class="fila">
+            <input type="checkbox" id="chkNieve">
+            <span><strong>Nieve de fondo</strong><small>Copos cayendo suavemente.</small></span>
+          </label>
+        </li>
+        <li id="filaPrueba">
+          <label class="fila">
+            <input type="checkbox" id="chkPrueba">
+            <span><strong>Modo prueba</strong><small>Desbloquea todos los sobres para probar la app fuera de diciembre. Los sobres de días futuros que abras en este modo no se guardan.</small></span>
+          </label>
+        </li>
+        <li id="filaInstalar" hidden>
+          <button type="button" class="btn btn-oro" id="btnInstalar">📲 Instalar la app</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-peligro" id="btnReiniciar">Reiniciar progreso</button>
+        </li>
+      </ul>
+      <div class="carta-acciones">
+        <button type="button" class="btn" data-cerrar>Listo</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- MODAL: confirmación -->
+  <dialog id="dlgConfirmar" role="alertdialog" aria-modal="true" aria-labelledby="confTitulo" aria-describedby="confTexto">
+    <form method="dialog" class="carta">
+      <h2 id="confTitulo"></h2>
+      <p class="carta-texto" id="confTexto"></p>
+      <div class="carta-acciones">
+        <button type="submit" class="btn" value="cancelar" autofocus>Cancelar</button>
+        <button type="submit" class="btn btn-peligro" value="ok" id="confOk">Aceptar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="contenido.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

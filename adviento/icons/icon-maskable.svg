@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b5a3a"/><stop offset="1" stop-color="#0d1a14"/></linearGradient></defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <g transform="translate(256 256) scale(.78) translate(-256 -256)">
+  <rect x="96" y="176" width="320" height="214" rx="16" fill="#8f1a22"/>
+  <rect x="136" y="132" width="240" height="170" rx="8" fill="#fbf4e4"/>
+  <g stroke="#b3202a" stroke-opacity=".35" stroke-width="5" stroke-linecap="round">
+    <line x1="170" y1="182" x2="342" y2="182"/><line x1="170" y1="212" x2="342" y2="212"/><line x1="170" y1="242" x2="300" y2="242"/>
+  </g>
+  <path d="M96 192 L256 312 L416 192 V374 Q416 390 400 390 H112 Q96 390 96 374 Z" fill="#b3202a"/>
+  <path d="M96 192 Q96 176 112 176 H400 Q416 176 416 192 L256 312 Z" fill="#d4414b"/>
+  <circle cx="256" cy="300" r="40" fill="#e3b85b" stroke="#a9812c" stroke-width="4"/>
+  <polygon points="256.0,276.0 261.9,291.9 278.8,292.6 265.5,303.1 270.1,319.4 256.0,310.0 241.9,319.4 246.5,303.1 233.2,292.6 250.1,291.9" fill="#7d1219"/>
+  </g>
+</svg>
