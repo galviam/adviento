@@ -193,6 +193,7 @@ h1 {
   text-align: center;
   font-weight: 600;
   color: var(--texto-suave);
+   font-size: 0.8rem;
 }
 
 /* ---------- Cuenta atrás ---------- */
