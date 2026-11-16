@@ -9,14 +9,14 @@ const AJUSTES = {
   titulo: "Calendario de Adviento",
 
   // Línea pequeña encima del título. Pon "" para ocultarla.
-  para: "Para [nombre]",
+  para: "Para Alejandro",
 
   // Mensaje de bienvenida (el \n crea un salto de línea)
   bienvenida:
-    "Veinticuatro sobres, veinticuatro formas de decirte lo mismo.\nUno cada día, hasta Nochebuena. 🎄",
+    "Veinticuatro sobres, veinticuatro formas de decirte lo mismo.\nUno cada día, hasta Nochebuena.",
 
   // Firma que aparece en el pie de página. Pon "" para ocultarla.
-  firma: "Con todo mi amor, [tu nombre]",
+  firma: "Con todo mi amor, Amparo",
 
   // Tema de color: "oscuro" (noche navideña) o "papel" (fondo claro tipo papel).
   // Para cambiar colores a tu gusto, edita las variables al principio de styles.css
@@ -41,19 +41,14 @@ const AJUSTES = {
 
      dia          (obligatorio) número del 1 al 24
      titulo       (obligatorio) título corto
-     tipo         (obligatorio) "mensaje" | "frase" | "reto" | "foto" | "enlace" (solo organizativo: ya no se muestra)
+     tipo         (obligatorio) "mensaje" | "frase" | "reto" | "foto" | "enlace" (solo organizativo: no se muestra)
      texto        (obligatorio) el contenido; \n crea salto de línea
      imagen       (opcional)    ruta de la foto, dentro de la carpeta img/
-     altImagen    (opcional)    descripción de la foto (para lectores de pantalla)
      enlace       (opcional)    dirección web completa
      textoEnlace  (opcional)    texto del botón del enlace
 
-   CÓMO CAMBIAR UNA FOTO:
-     1. Guarda tu foto en la carpeta img/ (por ejemplo img/dia-05.jpg).
-     2. En el día correspondiente, cambia la línea  imagen: "img/dia-05.svg"
-        por                                          imagen: "img/dia-05.jpg"
-     Si un día no lleva foto, borra las líneas imagen y altImagen de ese día.
-     Cualquier tipo de sobre puede llevar foto (no hace falta usar tipo "foto").
+   FOTOS: el día 1 usa img/2.png, el día 2 usa img/3.png ... el día 24 usa img/25.png
+   (img/1.png es el logo). Si un día no lleva foto, borra su línea imagen.
 */
 const DIAS = [
   {
@@ -62,8 +57,7 @@ const DIAS = [
     tipo: "mensaje",
     texto:
       "Hoy se abre el primer sobre y con él empieza un mes entero de pequeñas sorpresas.\n\nVeinticuatro días para recordarte lo mucho que te quiero, aunque ya lo sepas. Porque hay cosas que nunca se dicen demasiadas veces.",
-    imagen: "img/dia-01.svg",
-    altImagen: "Foto del día 1",
+    imagen: "img/2.png",
   },
   {
     dia: 2,
@@ -71,8 +65,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Mi lugar favorito del mundo no está en ningún mapa: es cualquier sitio donde estés tú.",
-    imagen: "img/dia-02.svg",
-    altImagen: "Foto del día 2",
+    imagen: "img/3.png",
   },
   {
     dia: 3,
@@ -80,8 +73,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Contigo he aprendido que la felicidad casi nunca hace ruido: es una tarde tranquila, una mano que busca la mía y tu risa llenando la casa.",
-    imagen: "img/dia-03.svg",
-    altImagen: "Foto del día 3",
+    imagen: "img/4.png",
   },
   {
     dia: 4,
@@ -89,8 +81,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Si me pidieran decir qué es lo que más quiero de ti, no sabría elegir: tu forma de mirar, de reír, de cuidar, de estar. Te quiero con todo lo que eres.",
-    imagen: "img/dia-04.svg",
-    altImagen: "Foto del día 4",
+    imagen: "img/5.png",
   },
   {
     dia: 5,
@@ -98,8 +89,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Tú eres mi casa. Da igual el sitio, la hora o el día que haya sido: cuando llego a ti, llego a casa.",
-    imagen: "img/dia-05.svg",
-    altImagen: "Foto del día 5",
+    imagen: "img/6.png",
   },
   {
     dia: 6,
@@ -107,8 +97,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Gracias por quedarte, por entenderme incluso cuando no sé explicarme y por hacer más suave todo lo que pesa. Contigo, hasta lo difícil se vuelve ligero.",
-    imagen: "img/dia-06.svg",
-    altImagen: "Foto del día 6",
+    imagen: "img/7.png",
   },
   {
     dia: 7,
@@ -116,8 +105,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Cada mañana te elegiría otra vez. Y mañana también. Y todas las mañanas que me queden.",
-    imagen: "img/dia-07.svg",
-    altImagen: "Foto del día 7",
+    imagen: "img/8.png",
   },
   {
     dia: 8,
@@ -125,8 +113,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Me enamoro de ti en lo pequeño: en cómo me miras desde el otro lado de la mesa, en cómo me cuentas tu día, en cómo conviertes lo cotidiano en algo bonito.",
-    imagen: "img/dia-08.svg",
-    altImagen: "Foto del día 8",
+    imagen: "img/9.png",
   },
   {
     dia: 9,
@@ -134,8 +121,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "De todas las personas del mundo, eres a quien quiero contarle mi día, a quien quiero abrazar al llegar y a quien quiero tener cerca cuando todo se complica.",
-    imagen: "img/dia-09.svg",
-    altImagen: "Foto del día 9",
+    imagen: "img/10.png",
   },
   {
     dia: 10,
@@ -143,8 +129,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Contigo no necesito mapa. Tú eres mi norte, mi calma y mis ganas de seguir caminando.",
-    imagen: "img/dia-10.svg",
-    altImagen: "Foto del día 10",
+    imagen: "img/11.png",
   },
   {
     dia: 11,
@@ -152,8 +137,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Contigo me siento mi mejor versión: más valiente, más tranquilo, más yo. Me has enseñado que querer también es cuidar, esperar y reír juntos.",
-    imagen: "img/dia-11.svg",
-    altImagen: "Foto del día 11",
+    imagen: "img/12.png",
   },
   {
     dia: 12,
@@ -161,8 +145,7 @@ const DIAS = [
     tipo: "mensaje",
     texto:
       "Hoy celebramos nuestro primer aniversario. El día exacto llega el 17, pero no quería esperar para brindar por ti, por nosotros y por todo lo bonito que hemos construido en este año.\n\nGracias por cada risa, por cada abrazo y por cada «quédate un ratito más». Esta noche, tú y yo. Te quiero.",
-    imagen: "img/dia-12.svg",
-    altImagen: "Foto del día 12, celebración",
+    imagen: "img/13.png",
   },
   {
     dia: 13,
@@ -170,8 +153,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Mi sonido favorito es tu risa. Mi sitio favorito, a tu lado. Mi hora favorita, cualquiera en la que estés.",
-    imagen: "img/dia-13.svg",
-    altImagen: "Foto del día 13",
+    imagen: "img/14.png",
   },
   {
     dia: 14,
@@ -179,8 +161,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Cualquier plan contigo, hasta el más sencillo, se convierte en el mejor del día. No necesito nada más que tu compañía.",
-    imagen: "img/dia-14.svg",
-    altImagen: "Foto del día 14",
+    imagen: "img/15.png",
   },
   {
     dia: 15,
@@ -188,8 +169,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Si pudiera volver atrás, volvería a encontrarte. Una y mil veces. Eres lo mejor que me ha pasado, y también lo mejor que he elegido.",
-    imagen: "img/dia-15.svg",
-    altImagen: "Foto del día 15",
+    imagen: "img/16.png",
   },
   {
     dia: 16,
@@ -197,8 +177,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Hay cosas que no se ven y valen más que cualquier regalo: la paz que me das, la seguridad con la que me quieres y cómo se me ordena el mundo cuando estás cerca.",
-    imagen: "img/dia-16.svg",
-    altImagen: "Foto del día 16",
+    imagen: "img/17.png",
   },
   {
     dia: 17,
@@ -206,8 +185,7 @@ const DIAS = [
     tipo: "mensaje",
     texto:
       "Hoy hace un año que empezó la mejor historia que conozco.\n\nGracias por cada día a mi lado, por tu paciencia, por tu ternura y por hacerme tan feliz. Si tuviera que volver a empezar, empezaría igual: contigo.\n\nFeliz primer aniversario, mi amor. Esto es solo el principio.",
-    imagen: "img/dia-17.svg",
-    altImagen: "Foto del día 17, aniversario",
+    imagen: "img/18.png",
   },
   {
     dia: 18,
@@ -215,8 +193,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Mi sitio favorito para dar la mano es la tuya. Cuando la sostengo, siento que todo va a salir bien.",
-    imagen: "img/dia-18.svg",
-    altImagen: "Foto del día 18",
+    imagen: "img/19.png",
   },
   {
     dia: 19,
@@ -224,8 +201,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "No sé qué nos traerá el año que viene, pero sé con quién quiero descubrirlo.",
-    imagen: "img/dia-19.svg",
-    altImagen: "Foto del día 19",
+    imagen: "img/20.png",
   },
   {
     dia: 20,
@@ -233,8 +209,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Tus abrazos son un refugio: llegan, me recogen y todo lo demás se queda fuera un ratito. Podría vivir ahí.",
-    imagen: "img/dia-20.svg",
-    altImagen: "Foto del día 20",
+    imagen: "img/21.png",
   },
   {
     dia: 21,
@@ -242,8 +217,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Por estas fechas llega la noche más larga del año, y a tu lado hasta la noche más larga es un regalo. Eres mi luz favorita en invierno y en todas las estaciones.",
-    imagen: "img/dia-21.svg",
-    altImagen: "Foto del día 21",
+    imagen: "img/22.png",
   },
   {
     dia: 22,
@@ -251,8 +225,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Te quiero en lo grande y en lo pequeño, en lo fácil y en lo difícil, en los días de fiesta y en los martes cualquiera.",
-    imagen: "img/dia-22.svg",
-    altImagen: "Foto del día 22",
+    imagen: "img/23.png",
   },
   {
     dia: 23,
@@ -260,8 +233,7 @@ const DIAS = [
     tipo: "frase",
     texto:
       "Mañana es Nochebuena y mi mejor regalo ya lo tengo: tenerte. Lo demás es solo envoltorio.",
-    imagen: "img/dia-23.svg",
-    altImagen: "Foto del día 23",
+    imagen: "img/24.png",
   },
   {
     dia: 24,
@@ -269,7 +241,6 @@ const DIAS = [
     tipo: "mensaje",
     texto:
       "Has llegado al último sobre, pero no a lo último que tengo para decirte.\n\nGracias por este año, por tu amor y por cada momento a tu lado. Te quiero hoy, te querré mañana y todos los días que vengan.\n\nFeliz Navidad, mi amor. 🎄❤️",
-    imagen: "img/dia-24.svg",
-    altImagen: "Foto del día 24",
+    imagen: "img/25.png",
   },
 ];

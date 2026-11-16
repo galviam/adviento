@@ -4,11 +4,11 @@
    versión más reciente (así tus cambios en contenido.js se notan enseguida);
    sin conexión se usa la copia guardada.
    ===================================================================== */
-const VERSION = 'adviento-v1';   // súbelo (v2, v3...) si quieres forzar a limpiar la caché antigua
+const VERSION = 'adviento-v2';   // súbelo (v2, v3...) si quieres forzar a limpiar la caché antigua
 
 const NUCLEO = [
   './', 'index.html', 'styles.css', 'app.js', 'contenido.js', 'manifest.json',
-  'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png',
+  'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-maskable-512.png',
   'icons/apple-touch-icon.png',
 ];
 
