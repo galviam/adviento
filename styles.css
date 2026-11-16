@@ -1,47 +1,8 @@
 /* =====================================================================
    STYLES.CSS
-   0) TIPOGRAFÍAS: "New Icon Script" (títulos y números) y "TT Norms" (resto).
    1) PERSONALIZACIÓN: cambia aquí colores, tipografías y tamaños.
    2) El resto es la maquetación: normalmente no hace falta tocarlo.
    ===================================================================== */
-
-/* ---------- 0. TIPOGRAFÍAS PROPIAS ----------
-   Son fuentes de pago: copia tus archivos web (.woff2 recomendado) en la carpeta fonts/
-   con estos nombres exactos (o cambia los nombres aquí). Si falta alguno, se usa una
-   fuente de respaldo y la página sigue funcionando. */
-@font-face {
-  font-family: "New Icon Script";
-  src: local("New Icon Script"), local("NewIconScript"),
-       url("fonts/NewIconScript.woff2") format("woff2"),
-       url("fonts/NewIconScript.woff") format("woff"),
-       url("fonts/NewIconScript.otf") format("opentype"),
-       url("fonts/NewIconScript.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TT Norms";
-  src: local("TT Norms Regular"), local("TTNorms-Regular"),
-       url("fonts/TTNorms-Regular.woff2") format("woff2"),
-       url("fonts/TTNorms-Regular.woff") format("woff"),
-       url("fonts/TTNorms-Regular.otf") format("opentype"),
-       url("fonts/TTNorms-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TT Norms";
-  src: local("TT Norms Bold"), local("TTNorms-Bold"),
-       url("fonts/TTNorms-Bold.woff2") format("woff2"),
-       url("fonts/TTNorms-Bold.woff") format("woff"),
-       url("fonts/TTNorms-Bold.otf") format("opentype"),
-       url("fonts/TTNorms-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* ---------- 1. PERSONALIZACIÓN (tema "oscuro", el de por defecto) ---------- */
 :root {
@@ -78,8 +39,8 @@
   --copo: #ffffff;                              /* color de la nieve */
 
   /* Tipografías (las cargadas en index.html) */
-  --fuente-titulo: "New Icon Script", "Mountains of Christmas", Georgia, "Times New Roman", serif;
-  --fuente-texto: "TT Norms", "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --fuente-titulo: "Alex Brush", "Brush Script MT", cursive;   /* títulos y números */
+  --fuente-texto: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /* Medidas */
   --radio: 14px;
@@ -527,16 +488,6 @@ dialog[open] { animation: entrar 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.1); }
   color: var(--rojo-oscuro);
 }
 .carta-meta { display: flex; align-items: center; gap: 0.6rem; margin: 0; }
-.pildora {
-  padding: 0.15rem 0.7rem;
-  border-radius: 999px;
-  background: var(--verde-oscuro);
-  color: #fff7e6;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
 .carta-dia { font-size: 0.85rem; font-weight: 700; color: var(--tinta-suave); }
 .carta-texto {
   margin: 0 0 1.2rem;
@@ -555,7 +506,7 @@ dialog[open] { animation: entrar 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.1); }
   border: 1px solid var(--oro-oscuro);
   background: rgba(125, 18, 25, 0.06);
 }
-.carta-acciones { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: flex-end; }
+.carta-acciones { display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center; }  /* center | flex-start (izquierda) | flex-end (derecha) */
 
 .cerrar {
   position: absolute;

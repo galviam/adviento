@@ -20,15 +20,6 @@
     reiniciado: 'Progreso reiniciado.',
   };
 
-  // Tipos de contenido: icono y etiqueta que se muestran en la carta
-  const TIPOS = {
-    mensaje: { icono: '💌', etiqueta: 'Mensaje' },
-    frase:   { icono: '✨', etiqueta: 'Frase' },
-    reto:    { icono: '🎯', etiqueta: 'Reto' },
-    foto:    { icono: '📷', etiqueta: 'Foto' },
-    enlace:  { icono: '🔗', etiqueta: 'Enlace' },
-  };
-
   /* ---------- Constantes y datos ---------- */
   const TOTAL = 24;
   const DICIEMBRE = 11; // en JavaScript los meses empiezan en 0 (enero = 0)
@@ -279,10 +270,8 @@
     actualizar();
 
     const datos = contenidoDia.get(n) || { titulo: `Día ${n}`, tipo: 'mensaje', texto: TEXTOS.sinContenido };
-    const tipo = TIPOS[datos.tipo] || TIPOS.mensaje;
 
     // Todo se inserta con textContent (nunca como HTML), así que el texto no puede inyectar código
-    $('dlgDiaTipo').textContent = `${tipo.icono} ${tipo.etiqueta}`;
     $('dlgDiaNum').textContent = `Día ${n} de diciembre`;
     $('dlgDiaTitulo').textContent = datos.titulo || `Día ${n}`;
     $('dlgDiaTexto').textContent = datos.texto || '';

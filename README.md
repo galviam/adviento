@@ -22,7 +22,6 @@ Una web de calendario de adviento con 24 sobres (del 1 al 24 de diciembre). Es H
 ├── manifest.json    Datos de la PWA (nombre, colores, iconos)
 ├── sw.js            Service worker (modo sin conexión)
 ├── img/             Tus fotos de los días (dia-01.svg … dia-24.svg son de prueba)
-├── fonts/           Tus tipografías (New Icon Script y TT Norms)
 └── icons/           Iconos de la app
 ```
 
@@ -91,7 +90,7 @@ Cada día es un objeto de la lista `DIAS`:
 {
   dia: 7,                                   // 1 a 24 (obligatorio)
   titulo: "Pon banda sonora",               // obligatorio
-  tipo: "enlace",                           // mensaje | frase | reto | foto | enlace
+  tipo: "enlace",                           // solo organizativo (no se muestra en pantalla)
   texto: "Hoy toca música…",                // obligatorio (\n = salto de línea)
   enlace: "https://…",                      // opcional
   textoEnlace: "Buscar villancicos",        // opcional (texto del botón)
@@ -150,7 +149,7 @@ Consejos:
 
 **Fotos.** Cada día ya apunta a una imagen de prueba (`img/dia-01.svg` … `img/dia-24.svg`). Para poner la tuya: guarda la foto en `img/` (p. ej. `dia-05.jpg`, mejor de menos de 500 KB) y en `contenido.js` cambia `imagen: "img/dia-05.svg"` por `imagen: "img/dia-05.jpg"`. Si un día no lleva foto, borra sus líneas `imagen` y `altImagen`. Cualquier tipo de sobre puede llevar foto.
 
-**Tipografías.** Los títulos y números usan **New Icon Script** y el resto **TT Norms**. Son fuentes de pago: copia tus archivos web en `fonts/` con estos nombres (valen `.woff2`, `.woff`, `.otf` o `.ttf`): `NewIconScript.woff2`, `TTNorms-Regular.woff2` y `TTNorms-Bold.woff2`. Comprueba que tu licencia permite usarlas en una web. Mientras falten, se usan fuentes de respaldo. Si la script se ve pequeña o grande, ajusta los `font-size` de `h1`, `.sobre-num`, `.carta h2` y `.cuenta-num` en `styles.css`.
+**Tipografías.** Los títulos y números usan **Alex Brush** (caligrafía) y el resto **Montserrat**, ambas de Google Fonts. Para cambiarlas: elige otra en <https://fonts.google.com>, sustituye el nombre en el enlace de `index.html` y en `--fuente-titulo` / `--fuente-texto` de `styles.css`. Alternativas de caligrafía: Great Vibes, Allura, Pinyon Script. Si la caligrafía se ve pequeña o grande, ajusta los `font-size` de `h1`, `.sobre-num`, `.carta h2` y `.cuenta-num`.
 
 ---
 

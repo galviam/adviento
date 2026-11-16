@@ -41,7 +41,7 @@ const AJUSTES = {
 
      dia          (obligatorio) número del 1 al 24
      titulo       (obligatorio) título corto
-     tipo         (obligatorio) "mensaje" | "frase" | "reto" | "foto" | "enlace"
+     tipo         (obligatorio) "mensaje" | "frase" | "reto" | "foto" | "enlace" (solo organizativo: ya no se muestra)
      texto        (obligatorio) el contenido; \n crea salto de línea
      imagen       (opcional)    ruta de la foto, dentro de la carpeta img/
      altImagen    (opcional)    descripción de la foto (para lectores de pantalla)
