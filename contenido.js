@@ -56,7 +56,7 @@ const DIAS = [
     titulo: "Empieza nuestra cuenta atrás",
     tipo: "mensaje",
     texto:
-      "Hoy se abre el primer sobre y con él empieza un mes entero de pequeñas sorpresas.\n\nVeinticuatro días para recordarte lo mucho que te quiero, aunque ya lo sepas. Porque hay cosas que nunca se dicen demasiadas veces.",
+      "Primer sobre, estas nervioso?? Yo sí. Espero que te guste.\n\nVeinticuatro días para recordarte lo MUCHO que te quiero, porque hay cosas que nunca se dicen demasiadas veces.",
     imagen: "img/2.png",
   },
   {
@@ -64,7 +64,7 @@ const DIAS = [
     titulo: "Mi lugar favorito",
     tipo: "frase",
     texto:
-      "Mi lugar favorito del mundo no está en ningún mapa: es cualquier sitio donde estés tú.",
+      "Mi sitio favorito es a tu lado",
     imagen: "img/3.png",
   },
   {
@@ -72,7 +72,7 @@ const DIAS = [
     titulo: "Contigo, despacio",
     tipo: "frase",
     texto:
-      "Contigo he aprendido que la felicidad casi nunca hace ruido: es una tarde tranquila, una mano que busca la mía y tu risa llenando la casa.",
+      "La felicidad es una tarde tranquila, una mano que busca la mia y tu risa de malvado haciéndome reír aún más.",
     imagen: "img/4.png",
   },
   {
@@ -80,7 +80,7 @@ const DIAS = [
     titulo: "Lo que más quiero",
     tipo: "frase",
     texto:
-      "Si me pidieran decir qué es lo que más quiero de ti, no sabría elegir: tu forma de mirar, de reír, de cuidar, de estar. Te quiero con todo lo que eres.",
+      "Que es lo que más me gusta de ti?? no sabría elegir: tu forma de mirar, de reír, de cuidar, de estar. Te quiero con todo mi corazón.",
     imagen: "img/5.png",
   },
   {
@@ -88,7 +88,7 @@ const DIAS = [
     titulo: "Mi casa",
     tipo: "frase",
     texto:
-      "Tú eres mi casa. Da igual el sitio, la hora o el día que haya sido: cuando llego a ti, llego a casa.",
+      "Eres mi casa. Da igual el sitio, la hora o el día que haya sido: cuando estoy contigo estoy en casa.",
     imagen: "img/6.png",
   },
   {
@@ -96,7 +96,7 @@ const DIAS = [
     titulo: "Gracias por quedarte",
     tipo: "frase",
     texto:
-      "Gracias por quedarte, por entenderme incluso cuando no sé explicarme y por hacer más suave todo lo que pesa. Contigo, hasta lo difícil se vuelve ligero.",
+      "Gracias por quedarte, por entenderme incluso cuando no sé explicarme y por hacer más suave todo lo que pesa. Contigo, hasta lo difícil se vuelve fácil.",
     imagen: "img/7.png",
   },
   {
@@ -104,12 +104,12 @@ const DIAS = [
     titulo: "Cada mañana",
     tipo: "frase",
     texto:
-      "Cada mañana te elegiría otra vez. Y mañana también. Y todas las mañanas que me queden.",
+      "Todas las mañanas te elegiría otra vez. Y mañana también. Y todas las que me queden.",
     imagen: "img/8.png",
   },
   {
     dia: 8,
-    titulo: "Pequeños milagros",
+    titulo: "Pequeños besitos",
     tipo: "frase",
     texto:
       "Me enamoro de ti en lo pequeño: en cómo me miras desde el otro lado de la mesa, en cómo me cuentas tu día, en cómo conviertes lo cotidiano en algo bonito.",
@@ -120,15 +120,15 @@ const DIAS = [
     titulo: "Mi persona favorita",
     tipo: "frase",
     texto:
-      "De todas las personas del mundo, eres a quien quiero contarle mi día, a quien quiero abrazar al llegar y a quien quiero tener cerca cuando todo se complica.",
+      "De todas las personas en del mundo, eres a quien quiero contarle mi día, a quien quiero abrazar al llegar y a quien quiero tener cerca siempre.",
     imagen: "img/10.png",
   },
   {
     dia: 10,
-    titulo: "Mi norte",
+    titulo: "Mi guapo",
     tipo: "frase",
     texto:
-      "Contigo no necesito mapa. Tú eres mi norte, mi calma y mis ganas de seguir caminando.",
+      "Los días duros se solucionan muuuuuuuuuuy rápdio cuando me llamas por teléfono o nos vemos 5 minutitos.",
     imagen: "img/11.png",
   },
   {
@@ -136,7 +136,7 @@ const DIAS = [
     titulo: "Mi mejor versión",
     tipo: "frase",
     texto:
-      "Contigo me siento mi mejor versión: más valiente, más tranquilo, más yo. Me has enseñado que querer también es cuidar, esperar y reír juntos.",
+      "Contigo soy mi mejor versión: más valiente, más tranquila, más yo. Me has enseñado que querer también es cuidar, tener paciencia y reír juntos.",
     imagen: "img/12.png",
   },
   {
@@ -144,7 +144,7 @@ const DIAS = [
     titulo: "Hoy lo celebramos",
     tipo: "mensaje",
     texto:
-      "Hoy celebramos nuestro primer aniversario. El día exacto llega el 17, pero no quería esperar para brindar por ti, por nosotros y por todo lo bonito que hemos construido en este año.\n\nGracias por cada risa, por cada abrazo y por cada «quédate un ratito más». Esta noche, tú y yo. Te quiero.",
+      "Hoy celebramos nuestro primer aniversario, QUE NERVIOS. El día exacto es el 17, pero no quería esperar para celebrar por ti, por nosotros y por todo lo bonito que hemos construido en este año.\n\nGracias por absolutamente todo, cada risa, cada abrazo y  cada beso. Te amo.",
     imagen: "img/13.png",
   },
   {
@@ -160,7 +160,7 @@ const DIAS = [
     titulo: "Cualquier plan contigo",
     tipo: "frase",
     texto:
-      "Cualquier plan contigo, hasta el más sencillo, se convierte en el mejor del día. No necesito nada más que tu compañía.",
+      "Cualquier plan contigo, hasta el más sencillo, se convierte en lo mejor del día. No necesito nada más.",
     imagen: "img/15.png",
   },
   {
@@ -168,7 +168,7 @@ const DIAS = [
     titulo: "Mi mejor casualidad",
     tipo: "frase",
     texto:
-      "Si pudiera volver atrás, volvería a encontrarte. Una y mil veces. Eres lo mejor que me ha pasado, y también lo mejor que he elegido.",
+      "Si pudiera volver atrás, volvería a encontrarte. Una y mil veces. Eres lo mejor que me ha pasado.",
     imagen: "img/16.png",
   },
   {
@@ -184,7 +184,7 @@ const DIAS = [
     titulo: "Un año contigo",
     tipo: "mensaje",
     texto:
-      "Hoy hace un año que empezó la mejor historia que conozco.\n\nGracias por cada día a mi lado, por tu paciencia, por tu ternura y por hacerme tan feliz. Si tuviera que volver a empezar, empezaría igual: contigo.\n\nFeliz primer aniversario, mi amor. Esto es solo el principio.",
+      "Hoy hace un año que empezó la mejor historia del mundo.\n\nGracias por cada día a tu lado, por tu paciencia, por tu ternura y por hacerme tan feliz. Si tuviera que volver a empezar, empezaría igual, contigo.\n\nFeliz primer aniversario, mi amor. Esto es solo el principio.",
     imagen: "img/18.png",
   },
   {
@@ -192,7 +192,7 @@ const DIAS = [
     titulo: "Tu mano",
     tipo: "frase",
     texto:
-      "Mi sitio favorito para dar la mano es la tuya. Cuando la sostengo, siento que todo va a salir bien.",
+      "Mi sitio favorito para dar la mano es la tuya. Cuando la coges, siento que todo va a salir bien.",
     imagen: "img/19.png",
   },
   {
@@ -232,7 +232,7 @@ const DIAS = [
     titulo: "Mi mejor regalo",
     tipo: "frase",
     texto:
-      "Mañana es Nochebuena y mi mejor regalo ya lo tengo: tenerte. Lo demás es solo envoltorio.",
+      "Mañana es Nochebuena y mi mejor regalo ya lo tengo: tenerte.",
     imagen: "img/24.png",
   },
   {
@@ -240,7 +240,7 @@ const DIAS = [
     titulo: "Feliz Nochebuena, mi vida",
     tipo: "mensaje",
     texto:
-      "Has llegado al último sobre, pero no a lo último que tengo para decirte.\n\nGracias por este año, por tu amor y por cada momento a tu lado. Te quiero hoy, te querré mañana y todos los días que vengan.\n\nFeliz Navidad, mi amor. 🎄❤️",
+      "Has llegado al último sobre, pero no a lo último que tengo para decirte.\n\nGracias por este año, por tu amor y por cada momento a tu lado. Te quiero hoy, te querré mañana y todos los días que vengan.\n\nFeliz Navidad, mi amor.",
     imagen: "img/25.png",
   },
 ];
