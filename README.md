@@ -29,25 +29,11 @@ Una web de calendario de adviento con 24 sobres (del 1 al 24 de diciembre). Es H
 
 ## 1. Subirlo a GitHub y publicarlo con GitHub Pages
 
-### Opción A: desde la web (sin instalar nada)
-
 1. Entra en <https://github.com> e inicia sesión.
 2. Pulsa **New** (nuevo repositorio). Ponle un nombre, por ejemplo `adviento`. Déjalo en **Public** (GitHub Pages gratis lo necesita) y pulsa **Create repository**.
 3. En la página del repo pulsa **uploading an existing file**.
 4. Arrastra **todo el contenido de la carpeta** (los archivos y las carpetas `img` e `icons`). Importante: `index.html` debe quedar en la raíz del repositorio, no dentro de otra carpeta.
 5. Pulsa **Commit changes**.
-
-### Opción B: con Git
-
-```bash
-cd carpeta-del-calendario
-git init
-git add .
-git commit -m "Calendario de adviento"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/adviento.git
-git push -u origin main
-```
 
 ### Activar GitHub Pages
 
