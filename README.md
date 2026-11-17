@@ -172,25 +172,3 @@ Antes de enviárselo a alguien, pon `modoPruebaDisponible: false` en `contenido.
 
 Una vez abierta con conexión, funciona sin internet. Con conexión siempre se muestra la versión más reciente; si cambias algo y no lo ves, cierra y abre la app (o recarga) una vez.
 
----
-
-## 6. Probarla en tu ordenador
-
-Con Python instalado, desde la carpeta del proyecto:
-
-```bash
-python3 -m http.server 8000
-```
-
-Y abre <http://localhost:8000>. (Abrir `index.html` con doble clic también funciona, pero sin el modo sin conexión.)
-
----
-
-## Sobre las fechas y la «seguridad» de los sobres
-
-- La fecha sale de `new Date()`, es decir, del **reloj del dispositivo** y su zona horaria. Si el móvil cambia de zona o de hora, el calendario sigue ese cambio.
-- La comprobación se repite **en cada clic y cada segundo**: al pasar la medianoche el sobre del nuevo día se desbloquea solo, sin recargar. Se comparan año, mes y día (no milisegundos), así los cambios de hora de verano no desplazan el día.
-- No se puede abrir un sobre editando el HTML o las clases desde el navegador: al pulsar se vuelve a calcular la fecha, el contenido de un día solo se escribe en la página cuando se abre, y los datos guardados se validan al cargar (un día futuro marcado como «abierto» se ignora).
-- **Límite honesto**: al ser una web estática y sin servidor, quien sepa de programación podría cambiar el reloj de su dispositivo, o leer `contenido.js` directamente desde el navegador o el propio repositorio, que es público. Es una protección contra curiosear sin querer, no contra un ataque. Si el contenido es muy secreto, no escribas en `contenido.js` nada que no quieras que se pueda leer.
-- Cada dispositivo guarda su propio progreso: no se comparte entre móvil y ordenador.
-- Las tipografías se cargan desde Google Fonts. Si prefieres no depender de Google, descarga las fuentes, guárdalas en el proyecto y enlázalas desde `styles.css`.
