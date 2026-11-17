@@ -33,7 +33,7 @@ const AJUSTES = {
 
   // Si pones false, el "Modo prueba" desaparece del menú de Ajustes.
   // Recomendado: ponlo en false antes de enviárselo.
-  modoPruebaDisponible: true,
+  modoPruebaDisponible: false,
 };
 
 /* ---------- 2. CONTENIDO DE LOS 24 DÍAS ----------
